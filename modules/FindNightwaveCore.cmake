@@ -14,7 +14,7 @@
 
 
 # Find headers
-FIND_PATH(NightwaveCore_INCLUDE_DIR
+find_path(NightwaveCore_INCLUDE_DIR
 	NAMES "NightwaveCore/NightwaveCore.h"
 	PATHS
 	"[HKEY_LOCAL_MACHINE\\SOFTWARE\\NightwaveCore\\Current;BinPath]"
@@ -30,7 +30,7 @@ FIND_PATH(NightwaveCore_INCLUDE_DIR
 )
 
 # Find compiled library file
-FIND_LIBRARY(NightwaveCore_LIBRARIES
+find_library(NightwaveCore_LIBRARIES
 	NAMES libNightwaveCore NightwaveCore
 	PATHS 
 	"[HKEY_LOCAL_MACHINE\\SOFTWARE\\NightwaveCore\\Current;BinPath]"
@@ -47,10 +47,14 @@ FIND_LIBRARY(NightwaveCore_LIBRARIES
 )
 
 # Get path to library
-GET_FILENAME_COMPONENT(NightwaveCore_LIBRARY_DIR ${NightwaveCore_LIBRARIES} PATH)
+get_filename_component(NightwaveCore_LIBRARY_DIR ${NightwaveCore_LIBRARIES} PATH)
 
+# Set variables as advanced (hide from GUI unless "show advanced checked")
+mark_as_advanced(NightwaveCore_LIBRARIES NightwaveCore_LIBRARY_DIR NightwaveCore_INCLUDE_DIR)
+
+# Set NightwaveCore_FOUND and print message
 INCLUDE(FindPackageHandleStandardArgs)
-FIND_PACKAGE_HANDLE_STANDARD_ARGS(
+find_package_handle_standard_args(
 	NightwaveCore
 	DEFAULT_MSG
 

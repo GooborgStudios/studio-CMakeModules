@@ -14,7 +14,7 @@
 
 
 # Find headers
-FIND_PATH(HOWL_INCLUDE_DIR
+find_path(HOWL_INCLUDE_DIR
 	NAMES "HOWL/HOWL.h"
 	PATHS
 	"[HKEY_LOCAL_MACHINE\\SOFTWARE\\HOWL\\Current;BinPath]"
@@ -30,7 +30,7 @@ FIND_PATH(HOWL_INCLUDE_DIR
 )
 
 # Find compiled library file
-FIND_LIBRARY(HOWL_LIBRARIES
+find_library(HOWL_LIBRARIES
 	NAMES libHOWL HOWL
 	PATHS 
 	"[HKEY_LOCAL_MACHINE\\SOFTWARE\\HOWL\\Current;BinPath]"
@@ -47,10 +47,14 @@ FIND_LIBRARY(HOWL_LIBRARIES
 )
 
 # Get path to library
-GET_FILENAME_COMPONENT(HOWL_LIBRARY_DIR ${HOWL_LIBRARIES} PATH)
+get_filename_component(HOWL_LIBRARY_DIR ${HOWL_LIBRARIES} PATH)
 
+# Set variables as advanced (hide from GUI unless "show advanced checked")
+mark_as_advanced(HOWL_LIBRARIES HOWL_LIBRARY_DIR HOWL_INCLUDE_DIR)
+
+# Set HOWL_FOUND and print message
 INCLUDE(FindPackageHandleStandardArgs)
-FIND_PACKAGE_HANDLE_STANDARD_ARGS(
+find_package_handle_standard_args(
 	HOWL
 	DEFAULT_MSG
 
