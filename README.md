@@ -1,5 +1,5 @@
 # studio-CMakeModules
-A collection of CMakeModules for our own libraries.  Need to reliably locate one of our libaries with CMake?  This is the repository for you.
+A collection of CMakeModules for our own libraries.  Need to reliably locate one of our libraries with CMake?  This is the repository for you.
 
 ## Updates
 As we update our software, our modules are subject to change at any given time.  Please be advised that mismatching versions between the library and CMake module may cause unexpected issues!
