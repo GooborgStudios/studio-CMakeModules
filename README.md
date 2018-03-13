@@ -18,5 +18,5 @@ We appreciate your work to solve an issue!  Feel free to send a pull request to 
 - Follow the code style (mainly indentation via tabs)
 - Mention the issue the PR is solving if applicable
 
-## Want to add a non-Nightwave library?
-We have a better repository for that!  Non-Nightwave software is added to our [CMakeModules](https://github.com/VaduNightwave/CMakeModules) repository.
+## Want to add a non-Gooborg library?
+We have a better repository for that!  Non-Gooborg software is added to our [CMakeModules](https://github.com/GooborgStudios/CMakeModules) repository.
